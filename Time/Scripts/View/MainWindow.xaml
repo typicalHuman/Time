@@ -1,0 +1,105 @@
+﻿<Window x:Class="Time.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:Time.Scripts.ViewModel"
+        mc:Ignorable="d"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        MinHeight="450" MinWidth="800"
+        AllowsTransparency="True" WindowStartupLocation="CenterScreen"
+        ResizeMode="{Binding ResizeMode}" WindowStyle="None"
+        BorderBrush="#007acb"
+        BorderThickness="{Binding WindowBorderThickness}"
+        MouseLeftButtonDown="Window_MouseLeftButtonDown"
+        WindowState="{Binding WindowState}"
+        FontFamily="{Binding FontFamily}">
+    <WindowChrome.WindowChrome>
+        <WindowChrome 
+        CaptionHeight="0"
+        ResizeBorderThickness="7"/>
+    </WindowChrome.WindowChrome>
+    <Window.DataContext>
+        <local:AppViewModel/>
+    </Window.DataContext>
+    <Grid Background="#1b1c1b">
+        <!--#region Grid Definitions-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition  Width="Auto"/>
+            <ColumnDefinition  Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="18*"/>
+        </Grid.RowDefinitions>
+        <!--#endregion-->
+
+        <!--#region Window Manipulation Buttons-->
+
+        <!--#region CloseButton-->
+        <Button Grid.Column="3" Width="51" Height="40"  Padding="5"
+                BorderThickness="0" BorderBrush="Transparent"
+                ToolTip="Close" Content="{materialDesign:PackIcon Kind=Close,Size=25}" Style="{StaticResource CloseButtonStyle}">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="Click">
+                    <i:InvokeCommandAction 
+                Command="{Binding CloseCommand}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </Button>
+
+        <!--#endregion-->
+        
+        <!--#region MaximizeButton-->
+        <Button Grid.Column="2" Height="40" Width="51"
+                ToolTip="Maximize" Style="{StaticResource MaximizeButtonStyle}"
+                Content="{materialDesign:PackIcon Kind=WindowMaximize,Size=25}">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="Click">
+                    <i:InvokeCommandAction 
+                Command="{Binding MaximizeCommand}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </Button>
+        <!--#endregion-->
+        
+        <!--#region MinimizeButton-->
+        <Button Grid.Column="1" Height="40" Width="51"
+                ToolTip="Minimize" Style="{StaticResource MaximizeButtonStyle}"
+                Content="{materialDesign:PackIcon Kind=WindowMinimize,Size=25}">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="Click">
+                    <i:InvokeCommandAction 
+                Command="{Binding MinimizeCommand}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </Button>
+        <!--#endregion-->
+
+        <!--#endregion-->
+
+        <StackPanel Orientation="Horizontal">
+            <!--#region MenuButton-->
+            <Button Width="50" Style="{StaticResource MenuButtonStyle}"
+                Content="{materialDesign:PackIcon Kind=CameraTimer,Size=30}"
+                HorizontalAlignment="Left"
+                ToolTip="Menu" Height="40">
+                <Button.ContextMenu>
+                    <ContextMenu Style="{StaticResource ContextMenuStyle}">
+                        <MenuItem Header="Open"/>
+                    </ContextMenu>
+                </Button.ContextMenu>
+            </Button>
+            <TextBlock Text="Time" Foreground="White" FontSize="25" 
+                       VerticalAlignment="Center" Margin="2 0 0 0"/>
+            <!--#endregion-->
+        </StackPanel>
+
+
+
+    </Grid>
+</Window>
