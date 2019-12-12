@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
+using Time.Model;
 
 namespace Time.Scripts.ViewModel
 {
@@ -19,6 +21,7 @@ namespace Time.Scripts.ViewModel
             //initalize default value
             WindowBorderThickness = new Thickness(1);
             fontFamily = new FontFamily("Courier New");
+            WorkDatas = new ObservableCollection<WorkData>();
         }
         #endregion
 
@@ -75,6 +78,32 @@ namespace Time.Scripts.ViewModel
             }
         }
         #endregion
+
+        #region AddCommand
+        private RelayCommand addCommand;
+        public RelayCommand AddCommand
+        {
+            get
+            {
+                return addCommand ?? (addCommand = new RelayCommand(obj =>
+                {
+                    if (IsWorkToday())
+                    {
+                        WorkData data = new WorkData();
+                        WorkDatas.Insert(0, data);
+                        SelectedData = data;
+                    }
+                }));
+            }
+        }
+        private bool IsWorkToday()
+        {
+            if(WorkDatas.Count > 0)
+               return WorkDatas[WorkDatas.Count - 1].Date != new WorkData().Date;
+            return true;
+        }
+        #endregion
+
         #endregion
 
         #region Properties
@@ -126,6 +155,20 @@ namespace Time.Scripts.ViewModel
             {
                 windowBorderThickness = value;
                 OnPropertyChanged("WindowBorderThickness");
+            }
+        }
+        #endregion
+
+        #region ModelInteraction
+        public ObservableCollection<WorkData> WorkDatas { get; set; }
+        private WorkData selectedData;
+        public WorkData SelectedData
+        {
+            get { return selectedData; }
+            set
+            {
+                selectedData = value;
+                OnPropertyChanged("SelectedData");
             }
         }
         #endregion

@@ -35,3 +35,4 @@ C:\Users\Admin\Desktop\мои файлы\Программирование\Про
 C:\Users\Admin\Desktop\мои файлы\Программирование\Программы\Проекты\Time\Time\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\Admin\Desktop\мои файлы\Программирование\Программы\Проекты\Time\Time\obj\Debug\Scripts\Styles\MenuButtonStyle.baml
 C:\Users\Admin\Desktop\мои файлы\Программирование\Программы\Проекты\Time\Time\obj\Debug\Scripts\Styles\ContextMenuStyle.baml
+C:\Users\Admin\Desktop\мои файлы\Программирование\Программы\Проекты\Time\Time\obj\Debug\Scripts\Styles\StartButtonStyle.baml

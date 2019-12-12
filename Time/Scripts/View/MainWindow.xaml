@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:Time.Scripts.ViewModel"
         mc:Ignorable="d"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
-        MinHeight="450" MinWidth="800"
+        MinHeight="450" MinWidth="450" Width="450" Height="450"
         AllowsTransparency="True" WindowStartupLocation="CenterScreen"
         ResizeMode="{Binding ResizeMode}" WindowStyle="None"
         BorderBrush="#007acb"
@@ -33,7 +33,8 @@
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
             <RowDefinition Height="18*"/>
         </Grid.RowDefinitions>
         <!--#endregion-->
@@ -82,6 +83,7 @@
 
         <!--#endregion-->
 
+        <!--#region Menu-->
         <StackPanel Orientation="Horizontal">
             <!--#region MenuButton-->
             <Button Width="50" Style="{StaticResource MenuButtonStyle}"
@@ -98,6 +100,54 @@
                        VerticalAlignment="Center" Margin="2 0 0 0"/>
             <!--#endregion-->
         </StackPanel>
+        <!--#endregion-->
+        
+        <!--#region DataManipulation-->
+        
+        <StackPanel Grid.Row="1" Grid.ColumnSpan="4" Orientation="Horizontal">
+            <!--#region AddData-->
+            <Button Width="50" Height="40" Style="{StaticResource MaximizeButtonStyle}"
+                    Content="{materialDesign:PackIcon Kind=AddAlarm,Size=30}"
+                    ToolTip="Add">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="Click">
+                        <i:InvokeCommandAction 
+                Command="{Binding AddCommand}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </Button>
+            <!--#endregion-->     
+            
+            <!--#region Start-->
+            <ToggleButton Style="{StaticResource StartButtonStyle}" Height="40"
+                    Width="50">
+            </ToggleButton>
+            <!--#endregion-->
+            
+        </StackPanel>
+        <!--#endregion-->
+
+        <!--#region Data -->
+        <ListBox ItemsSource="{Binding WorkDatas}" 
+                 SelectedItem="{Binding SelectedData}" Grid.Row="2">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Text="{Binding Date}" FontSize="20" Foreground="White"/>
+                        <Grid>
+                            <ProgressBar Width="300" Value="50" Height="30"
+                                     HorizontalAlignment="Left" Name="Progress"/>
+                            <TextBlock Text="{Binding ElementName=Progress, Path=Value, StringFormat={}{0:0}%}" 
+                                     HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Grid>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <!--#endregion-->
+
+        
+        
 
 
 

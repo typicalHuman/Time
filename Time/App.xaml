@@ -10,6 +10,7 @@
                 <ResourceDictionary Source="Scripts/Styles/MaximizeButtonStyle.xaml" />
                 <ResourceDictionary Source="Scripts/Styles/MenuButtonStyle.xaml" />
                 <ResourceDictionary Source="Scripts/Styles/ContextMenuStyle.xaml" />
+                <ResourceDictionary Source="Scripts/Styles/StartButtonStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
