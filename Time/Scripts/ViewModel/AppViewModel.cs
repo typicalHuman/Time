@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Messaging;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -13,7 +15,7 @@ using Time.Model;
 
 namespace Time.Scripts.ViewModel
 {
-    public class AppViewModel: INotifyPropertyChanged
+    public class AppViewModel: ViewModelBase, INotifyPropertyChanged
     {
         #region Constructor
         public AppViewModel()
@@ -22,6 +24,8 @@ namespace Time.Scripts.ViewModel
             WindowBorderThickness = new Thickness(1);
             fontFamily = new FontFamily("Courier New");
             WorkDatas = new ObservableCollection<WorkData>();
+            OpenSettingsWindowCommand = new RelayCommand(obj => OpenSettingsWindowCommandExecute());
+            ResizeMode = ResizeMode.CanResizeWithGrip;
         }
         #endregion
 
@@ -101,6 +105,14 @@ namespace Time.Scripts.ViewModel
             if(WorkDatas.Count > 0)
                return WorkDatas[WorkDatas.Count - 1].Date != new WorkData().Date;
             return true;
+        }
+        #endregion
+
+        #region OpenSettingsWindow
+        public RelayCommand OpenSettingsWindowCommand { private set; get; }
+        public void OpenSettingsWindowCommandExecute()
+        {
+            Messenger.Default.Send(new NotificationMessage("OpenSettingsWindow"));
         }
         #endregion
 

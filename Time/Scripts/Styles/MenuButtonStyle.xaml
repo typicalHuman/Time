@@ -1,6 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <Style x:Key="MenuButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource MaximizeButtonStyle}">
+    <Style TargetType="{x:Type Button}" BasedOn="{StaticResource MaximizeButtonStyle}" x:Key="MenuButtonStyle">
         <Style.Triggers>
             <EventTrigger RoutedEvent="Click">
                 <EventTrigger.Actions>
@@ -14,6 +14,14 @@
                 </EventTrigger.Actions>
             </EventTrigger>
         </Style.Triggers>
+        <Setter Property="ContextMenu">
+            <Setter.Value>
+                <ContextMenu>
+                    <MenuItem />
+                    <MenuItem />
+                </ContextMenu>
+            </Setter.Value>
+        </Setter>
     </Style>
-    
+
 </ResourceDictionary>

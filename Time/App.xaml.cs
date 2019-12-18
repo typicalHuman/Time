@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using Time.Scripts.ViewModel;
 
 namespace Time
 {
@@ -13,5 +14,13 @@ namespace Time
     /// </summary>
     public partial class App : Application
     {
+        public static AppViewModel MainVM { get; set; }
+        public static SettingsViewModel SettingsVM { get; set; }
+
+        static App()
+        {
+            MainVM = new AppViewModel();
+            SettingsVM = new SettingsViewModel();
+        }
     }
 }

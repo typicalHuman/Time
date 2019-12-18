@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GalaSoft.MvvmLight.Messaging;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Time.Scripts.View;
 using Time.Scripts.ViewModel;
 
 namespace Time
@@ -24,16 +26,23 @@ namespace Time
         public MainWindow()
         {
             InitializeComponent();
-            AppViewModel viewModel = new AppViewModel();
-            DataContext = viewModel;
-            if (viewModel.CloseAction == null)
-                viewModel.CloseAction = new Action(this.Close);
+            App.MainVM.CloseAction = new Action(this.Close);
+            Messenger.Default.Register<NotificationMessage>(this, NotificationMessageReceived);
 
         }
 
         private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             this.DragMove();
+        }
+
+        private void NotificationMessageReceived(NotificationMessage msg)
+        {
+            if (msg.Notification == "OpenSettingsWindow")
+            {
+                var view2 = new OptionsWindow();
+                view2.ShowDialog();
+            }
         }
     }
 }

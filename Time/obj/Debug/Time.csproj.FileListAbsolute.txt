@@ -32,7 +32,9 @@ C:\Users\Admin\Desktop\мои файлы\Программирование\Про
 C:\Users\Admin\Desktop\мои файлы\Программирование\Программы\Проекты\Time\Time\bin\Debug\GalaSoft.MvvmLight.Platform.xml
 C:\Users\Admin\Desktop\мои файлы\Программирование\Программы\Проекты\Time\Time\obj\Debug\Scripts\Styles\CloseButtonStyle.baml
 C:\Users\Admin\Desktop\мои файлы\Программирование\Программы\Проекты\Time\Time\obj\Debug\Scripts\Styles\MaximizeButtonStyle.baml
-C:\Users\Admin\Desktop\мои файлы\Программирование\Программы\Проекты\Time\Time\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\Admin\Desktop\мои файлы\Программирование\Программы\Проекты\Time\Time\obj\Debug\Scripts\Styles\MenuButtonStyle.baml
 C:\Users\Admin\Desktop\мои файлы\Программирование\Программы\Проекты\Time\Time\obj\Debug\Scripts\Styles\ContextMenuStyle.baml
 C:\Users\Admin\Desktop\мои файлы\Программирование\Программы\Проекты\Time\Time\obj\Debug\Scripts\Styles\StartButtonStyle.baml
+C:\Users\Admin\Desktop\мои файлы\Программирование\Программы\Проекты\Time\Time\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Admin\Desktop\мои файлы\Программирование\Программы\Проекты\Time\Time\obj\Debug\Scripts\View\SettingsWindow.g.cs
+C:\Users\Admin\Desktop\мои файлы\Программирование\Программы\Проекты\Time\Time\obj\Debug\Scripts\View\SettingsWindow.baml

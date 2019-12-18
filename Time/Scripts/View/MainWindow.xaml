@@ -4,9 +4,12 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        xmlns:local="clr-namespace:Time.Scripts.ViewModel"
-        mc:Ignorable="d"
+        xmlns:vm="clr-namespace:Time.Scripts.ViewModel"
+        xmlns:local="clr-namespace:Time"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        mc:Ignorable="d"
+        xmlns:viewmodels="clr-namespace:Time.Scripts.ViewModel"
+        xmlns:views="clr-namespace:Time.Scripts.View"
         MinHeight="450" MinWidth="450" Width="450" Height="450"
         AllowsTransparency="True" WindowStartupLocation="CenterScreen"
         ResizeMode="{Binding ResizeMode}" WindowStyle="None"
@@ -14,16 +17,15 @@
         BorderThickness="{Binding WindowBorderThickness}"
         MouseLeftButtonDown="Window_MouseLeftButtonDown"
         WindowState="{Binding WindowState}"
-        FontFamily="{Binding FontFamily}">
+        FontFamily="{Binding FontFamily}"
+        DataContext="{x:Static local:App.MainVM}">
     <WindowChrome.WindowChrome>
         <WindowChrome 
         CaptionHeight="0"
         ResizeBorderThickness="7"/>
     </WindowChrome.WindowChrome>
-    <Window.DataContext>
-        <local:AppViewModel/>
-    </Window.DataContext>
     <Grid Background="#1b1c1b">
+        
         <!--#region Grid Definitions-->
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="3*"/>
@@ -54,7 +56,7 @@
         </Button>
 
         <!--#endregion-->
-        
+
         <!--#region MaximizeButton-->
         <Button Grid.Column="2" Height="40" Width="51"
                 ToolTip="Maximize" Style="{StaticResource MaximizeButtonStyle}"
@@ -67,7 +69,7 @@
             </i:Interaction.Triggers>
         </Button>
         <!--#endregion-->
-        
+
         <!--#region MinimizeButton-->
         <Button Grid.Column="1" Height="40" Width="51"
                 ToolTip="Minimize" Style="{StaticResource MaximizeButtonStyle}"
@@ -86,13 +88,14 @@
         <!--#region Menu-->
         <StackPanel Orientation="Horizontal">
             <!--#region MenuButton-->
-            <Button Width="50" Style="{StaticResource MenuButtonStyle}"
+            <Button Width="50" Style="{StaticResource MaximizeButtonStyle}"
                 Content="{materialDesign:PackIcon Kind=CameraTimer,Size=30}"
                 HorizontalAlignment="Left"
-                ToolTip="Menu" Height="40">
+                ToolTip="Menu" Height="40"
+                    vm:MenuButtonViewModel.IsLeftClickEnabled="True">
                 <Button.ContextMenu>
                     <ContextMenu Style="{StaticResource ContextMenuStyle}">
-                        <MenuItem Header="Open"/>
+                        <MenuItem Header="Settings" Command="{Binding OpenSettingsWindowCommand}"/>
                     </ContextMenu>
                 </Button.ContextMenu>
             </Button>
@@ -101,9 +104,9 @@
             <!--#endregion-->
         </StackPanel>
         <!--#endregion-->
-        
+
         <!--#region DataManipulation-->
-        
+
         <StackPanel Grid.Row="1" Grid.ColumnSpan="4" Orientation="Horizontal">
             <!--#region AddData-->
             <Button Width="50" Height="40" Style="{StaticResource MaximizeButtonStyle}"
@@ -116,20 +119,20 @@
                     </i:EventTrigger>
                 </i:Interaction.Triggers>
             </Button>
-            <!--#endregion-->     
-            
+            <!--#endregion-->
+
             <!--#region Start-->
             <ToggleButton Style="{StaticResource StartButtonStyle}" Height="40"
                     Width="50">
             </ToggleButton>
             <!--#endregion-->
-            
+
         </StackPanel>
         <!--#endregion-->
 
         <!--#region Data -->
         <ListBox ItemsSource="{Binding WorkDatas}" 
-                 SelectedItem="{Binding SelectedData}" Grid.Row="2">
+                 SelectedItem="{Binding SelectedData}" Grid.Row="2" Background="#1b1c1b">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Vertical">
@@ -145,11 +148,6 @@
             </ListBox.ItemTemplate>
         </ListBox>
         <!--#endregion-->
-
-        
-        
-
-
 
     </Grid>
 </Window>
