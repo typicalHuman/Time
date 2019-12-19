@@ -30,22 +30,22 @@ namespace Time.Model
         }
         #endregion
 
-        #region Time
-        private string time;
-        public string Time
+        #region CurrentTime
+        private double currentTime;
+        public double CurrentTime
         {
-            get { return time; }
+            get { return currentTime; }
             set
             {
-                time = value;
-                OnPropertyChanged("Time");
+                currentTime = value;
+                OnPropertyChanged("CurrentTime");
             }
         }
         #endregion
 
         #region RequiredTime
-        private string requiredTime;
-        public string RequiredTime
+        private int requiredTime;
+        public int RequiredTime
         {
             get { return requiredTime; }
             set

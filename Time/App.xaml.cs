@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using Time.Scripts.ViewModel;
 
 namespace Time
@@ -16,11 +10,12 @@ namespace Time
     {
         public static AppViewModel MainVM { get; set; }
         public static SettingsViewModel SettingsVM { get; set; }
-
+        public static TimerViewModel TimerVM { get; set; }
         static App()
         {
             MainVM = new AppViewModel();
             SettingsVM = new SettingsViewModel();
+            TimerVM = new TimerViewModel();
         }
     }
 }

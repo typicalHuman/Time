@@ -27,8 +27,6 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="3*"/>
             <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition  Width="Auto"/>
-            <ColumnDefinition  Width="Auto"/>
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
@@ -67,17 +65,22 @@
         <!--#endregion-->
 
         <!--#region DataSettings -->
-        <StackPanel Grid.Row="1">
+        <StackPanel Grid.Row="1" Grid.ColumnSpan="2">
 
             <!--#region Limit -->
             
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Time Limit" Foreground="White" FontSize="20" Margin="3 0 0 0"
                            VerticalAlignment="Center"/>
-                <TextBox Width="30" FontSize="20" MaxLength="2" Margin="3 0 0 0"
+                <TextBox Width="55" FontSize="20" MaxLength="4" Margin="3 0 0 0"
                          Foreground="White" Text="{Binding TimeLimit, UpdateSourceTrigger=PropertyChanged}"
                          PreviewTextInput="TextBox_PreviewTextInput">
+                    <TextBox.ContextMenu >
+                        <ContextMenu Visibility="Collapsed"/>
+                    </TextBox.ContextMenu>
                 </TextBox>
+                <TextBlock Text="min" Foreground="White" FontSize="20" Margin="3 0 0 0"
+                           VerticalAlignment="Center"/>
             </StackPanel>
             <!--#endregion-->
 

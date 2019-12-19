@@ -30,6 +30,7 @@ namespace Time.Scripts.ViewModel
         #endregion
 
         #region Commands
+
         #region CloseCommand
         public Action CloseAction { get; set; }
         private RelayCommand closeCommand;
@@ -96,6 +97,8 @@ namespace Time.Scripts.ViewModel
                         WorkData data = new WorkData();
                         WorkDatas.Insert(0, data);
                         SelectedData = data;
+                        SelectedData.RequiredTime = int.Parse(Properties.Settings.Default.TimeLimit);
+                        App.TimerVM.IsEnabled = true;
                     }
                 }));
             }
@@ -171,6 +174,10 @@ namespace Time.Scripts.ViewModel
         }
         #endregion
 
+        #region IsEnabled
+        public bool IsEnabled { get; set; }
+        #endregion
+
         #region ModelInteraction
         public ObservableCollection<WorkData> WorkDatas { get; set; }
         private WorkData selectedData;
@@ -192,6 +199,7 @@ namespace Time.Scripts.ViewModel
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
         }
         #endregion
+
         #endregion
 
 

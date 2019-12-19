@@ -12,15 +12,15 @@ namespace Time.Scripts.ViewModel
 {
     public class SettingsViewModel: INotifyPropertyChanged
     {
+
+        #region Constructor
         public SettingsViewModel()
         { 
             //initalize default value
             fontFamily = new FontFamily("Courier New");
             TimeLimit = Properties.Settings.Default.TimeLimit;
         }
-
-      
-
+        #endregion
 
         #region Commands
         #region CloseCommand
@@ -58,7 +58,7 @@ namespace Time.Scripts.ViewModel
         }
         #endregion
 
-        #region
+        #region TimeLimit
         private string timeLimit;
         public string TimeLimit
         {
@@ -68,8 +68,8 @@ namespace Time.Scripts.ViewModel
                 timeLimit = value;
                 try
                 {
-                    if (Convert.ToInt32(TimeLimit) > 24)
-                        timeLimit = "24";
+                    if (Convert.ToInt32(TimeLimit) > 1440)
+                        timeLimit = "1440";
                 }
                 catch (FormatException) { }
                 OnPropertyChanged("TimeLimit");

@@ -10,7 +10,7 @@ using System.Windows.Data;
 
 namespace Time.Scripts.ViewModel
 {
-    public static class MenuButtonViewModel
+    public class MenuButtonViewModel
     {
         public static bool GetIsLeftClickEnabled(DependencyObject obj)
         {

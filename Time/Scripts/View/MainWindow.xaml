@@ -25,7 +25,7 @@
         ResizeBorderThickness="7"/>
     </WindowChrome.WindowChrome>
     <Grid Background="#1b1c1b">
-        
+
         <!--#region Grid Definitions-->
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="3*"/>
@@ -92,7 +92,7 @@
                 Content="{materialDesign:PackIcon Kind=CameraTimer,Size=30}"
                 HorizontalAlignment="Left"
                 ToolTip="Menu" Height="40"
-                    vm:MenuButtonViewModel.IsLeftClickEnabled="True">
+                    viewmodels:MenuButtonViewModel.IsLeftClickEnabled="True">
                 <Button.ContextMenu>
                     <ContextMenu Style="{StaticResource ContextMenuStyle}">
                         <MenuItem Header="Settings" Command="{Binding OpenSettingsWindowCommand}"/>
@@ -108,6 +108,7 @@
         <!--#region DataManipulation-->
 
         <StackPanel Grid.Row="1" Grid.ColumnSpan="4" Orientation="Horizontal">
+
             <!--#region AddData-->
             <Button Width="50" Height="40" Style="{StaticResource MaximizeButtonStyle}"
                     Content="{materialDesign:PackIcon Kind=AddAlarm,Size=30}"
@@ -123,7 +124,14 @@
 
             <!--#region Start-->
             <ToggleButton Style="{StaticResource StartButtonStyle}" Height="40"
-                    Width="50">
+                    Width="50" IsChecked="{Binding IsStart}" IsEnabled="{Binding IsEnabled}"
+                          DataContext="{x:Static local:App.TimerVM}">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="Click">
+                        <i:InvokeCommandAction 
+                           Command="{Binding StartCommand}" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
             </ToggleButton>
             <!--#endregion-->
 
@@ -138,10 +146,15 @@
                     <StackPanel Orientation="Vertical">
                         <TextBlock Text="{Binding Date}" FontSize="20" Foreground="White"/>
                         <Grid>
-                            <ProgressBar Width="300" Value="50" Height="30"
-                                     HorizontalAlignment="Left" Name="Progress"/>
-                            <TextBlock Text="{Binding ElementName=Progress, Path=Value, StringFormat={}{0:0}%}" 
-                                     HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            <ProgressBar Width="300" Height="30"
+                                     HorizontalAlignment="Left"
+                                         Maximum="{Binding RequiredTime}"
+                                         Value="{Binding CurrentTime}"  />
+                            <TextBlock Text="{Binding Percent, StringFormat={}{0:0}%, UpdateSourceTrigger=PropertyChanged}" 
+                                     HorizontalAlignment="Center" VerticalAlignment="Center"
+                                       DataContext="{x:Static local:App.TimerVM}">
+                                
+                            </TextBlock>
                         </Grid>
                     </StackPanel>
                 </DataTemplate>
