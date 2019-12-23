@@ -8,6 +8,7 @@ using System.Runtime.CompilerServices;
 
 namespace Time.Model
 {
+    [Serializable]
     public class WorkData : INotifyPropertyChanged
     {
         public WorkData()
@@ -15,6 +16,7 @@ namespace Time.Model
             if(Date == null)
             {
                 Date = $"Date: {DateTime.Now.ToShortDateString()}";
+                Timer = new global::TimerViewModel();
             }
         }
         #region Date
@@ -55,6 +57,30 @@ namespace Time.Model
             }
         }
         #endregion
+
+        #region Time
+        private string time;
+        public string Time
+        {
+            get { return time; }
+            set
+            {
+                time = value;
+                OnPropertyChanged("Time");
+            }
+        }
+        #endregion
+
+        private TimerViewModel timer;
+        public TimerViewModel Timer
+        {
+            get { return timer; }
+            set
+            {
+                timer = value;
+                OnPropertyChanged("Timer");
+            }
+        }
 
         #region OnPropertyChanged
         public event PropertyChangedEventHandler PropertyChanged;

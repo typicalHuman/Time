@@ -124,12 +124,11 @@
 
             <!--#region Start-->
             <ToggleButton Style="{StaticResource StartButtonStyle}" Height="40"
-                    Width="50" IsChecked="{Binding IsStart}" IsEnabled="{Binding IsEnabled}"
-                          DataContext="{x:Static local:App.TimerVM}">
+                    Width="50" IsChecked="{Binding SelectedData.Timer.IsStart}" IsEnabled="{Binding IsEnabled}">
                 <i:Interaction.Triggers>
                     <i:EventTrigger EventName="Click">
                         <i:InvokeCommandAction 
-                           Command="{Binding StartCommand}" />
+                           Command="{Binding SelectedData.Timer.StartCommand}" />
                     </i:EventTrigger>
                 </i:Interaction.Triggers>
             </ToggleButton>
@@ -140,7 +139,8 @@
 
         <!--#region Data -->
         <ListBox ItemsSource="{Binding WorkDatas}" 
-                 SelectedItem="{Binding SelectedData}" Grid.Row="2" Background="#1b1c1b">
+                 SelectedItem="{Binding SelectedData}" Grid.Row="2" Background="#1b1c1b"
+                 >
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Vertical">
@@ -150,12 +150,13 @@
                                      HorizontalAlignment="Left"
                                          Maximum="{Binding RequiredTime}"
                                          Value="{Binding CurrentTime}"  />
-                            <TextBlock Text="{Binding Percent, StringFormat={}{0:0}%, UpdateSourceTrigger=PropertyChanged}" 
-                                     HorizontalAlignment="Center" VerticalAlignment="Center"
-                                       DataContext="{x:Static local:App.TimerVM}">
+                            <TextBlock Text="{Binding Timer.Percent, StringFormat={}{0:0}%, UpdateSourceTrigger=PropertyChanged}" 
+                                     HorizontalAlignment="Center" VerticalAlignment="Center">
                                 
                             </TextBlock>
                         </Grid>
+                        <TextBlock 
+                                   Text="{Binding Timer.Time}" FontSize="20" Foreground="White"/>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>

@@ -82,6 +82,7 @@
     <Compile Include="Scripts\View\SettingsWindow.xaml.cs">
       <DependentUpon>SettingsWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Scripts\XML.cs" />
     <Page Include="Scripts\Styles\CloseButtonStyle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

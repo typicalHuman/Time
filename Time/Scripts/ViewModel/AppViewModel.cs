@@ -38,7 +38,12 @@ namespace Time.Scripts.ViewModel
         {
             get
             {
-                return closeCommand ?? (closeCommand = new RelayCommand(obj => CloseAction()));
+                return closeCommand ?? (closeCommand = new RelayCommand(obj =>
+                {
+                    XML xml = new XML();
+                    xml.Serialize(WorkDatas);
+                    CloseAction();
+                }));
             }
         }
         #endregion
@@ -98,7 +103,7 @@ namespace Time.Scripts.ViewModel
                         WorkDatas.Insert(0, data);
                         SelectedData = data;
                         SelectedData.RequiredTime = int.Parse(Properties.Settings.Default.TimeLimit);
-                        App.TimerVM.IsEnabled = true;
+                        IsEnabled = true;
                     }
                 }));
             }
@@ -175,7 +180,16 @@ namespace Time.Scripts.ViewModel
         #endregion
 
         #region IsEnabled
-        public bool IsEnabled { get; set; }
+        private bool isEnabled;
+        public bool IsEnabled
+        {
+            get { return isEnabled; }
+            set
+            {
+                isEnabled = value;
+                OnPropertyChanged("IsEnabled");
+            }
+        }
         #endregion
 
         #region ModelInteraction

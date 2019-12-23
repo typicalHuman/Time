@@ -16,7 +16,7 @@ public class TimerViewModel : INotifyPropertyChanged
     {
         isStart = false;
         timer = new DispatcherTimer();
-        timer.Interval = TimeSpan.FromMilliseconds(1000);
+        timer.Interval = TimeSpan.FromMilliseconds(100);
         timer.Tick += Tick;
     }
     #endregion
@@ -40,27 +40,18 @@ public class TimerViewModel : INotifyPropertyChanged
     }
     #endregion
 
-    #region MinutesCount
+    #region TimeCount
     private int seconds { get; set; }
-    public int Minutes
-    {
-        get { return seconds % 60; }
-        set
-        {
-            seconds = value;
-            OnPropertyChanged("Minutes");
-        }
-    }
-    #endregion
 
-    #region IsEnabled
-    public bool IsEnabled
+    private string time;
+    public string Time
     {
-        get { return App.MainVM.IsEnabled; }
+        get { return time; }
         set
         {
-            App.MainVM.IsEnabled = value;
-            OnPropertyChanged("IsEnabled");
+            time = value;
+            App.MainVM.SelectedData.Time = time;
+            OnPropertyChanged("Time");
         }
     }
     #endregion
@@ -71,8 +62,7 @@ public class TimerViewModel : INotifyPropertyChanged
     {
         get 
         {
-            double percent1 = Convert.ToDouble(App.MainVM.SelectedData.RequiredTime * 60) / 100;
-            return percent = Convert.ToInt32(seconds / percent1); 
+            return percent;
         }
         set
         {
@@ -117,12 +107,59 @@ public class TimerViewModel : INotifyPropertyChanged
     private void Tick(object sender, EventArgs e)
     {
         seconds++;
-        Percent = Percent;
+        SetPercent();
+        SetCurrentTime();
+        SetTime();
+    }
+
+    private void SetTime()
+    {
+        Time = GetTime();
+    }
+
+    private void SetCurrentTime()
+    {
         double procSec = 1.0 / 60.0;
         App.MainVM.SelectedData.CurrentTime = seconds * procSec;
     }
-    #endregion
 
+    private void SetPercent()
+    {
+        double percent1 = Convert.ToDouble(App.MainVM.SelectedData.RequiredTime * 60) / 100;
+        Percent = Convert.ToInt32(seconds / percent1);
+    }
+
+    private int GetHours(int _seconds)
+    {
+        if(_seconds >= 3600)
+           return _seconds / 3600;
+        return 0;
+    }
+
+    private int GetMinutes(int _seconds)
+    {
+        if(_seconds >= 60)
+           return _seconds / 60;
+        return 0;
+    }
+
+    private string GetTime()
+    {
+        int tempSeconds = seconds;
+        int _hours = GetHours(tempSeconds);
+        int _minutes = GetMinutes(tempSeconds - _hours * 3600);
+        int _seconds = tempSeconds - _hours * 3600 - _minutes * 60;
+        return $"{GetFullValue(_hours)}:{GetFullValue(_minutes)}:{GetFullValue(_seconds)}";
+
+    }
+
+    private string GetFullValue(int val)
+    {
+        if (val < 10)
+            return $"0{val}";
+        return val.ToString();
+    }
+    #endregion
 }
 
 

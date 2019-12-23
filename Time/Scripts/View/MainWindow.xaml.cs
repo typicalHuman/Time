@@ -28,7 +28,6 @@ namespace Time
             InitializeComponent();
             App.MainVM.CloseAction = new Action(this.Close);
             Messenger.Default.Register<NotificationMessage>(this, NotificationMessageReceived);
-
         }
 
         private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
