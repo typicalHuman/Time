@@ -41,7 +41,7 @@ public class TimerViewModel : INotifyPropertyChanged
     #endregion
 
     #region TimeCount
-    private int seconds { get; set; }
+    public int seconds { get; set; }
 
     private string time;
     public string Time
@@ -50,7 +50,8 @@ public class TimerViewModel : INotifyPropertyChanged
         set
         {
             time = value;
-            App.MainVM.SelectedData.Time = time;
+            if(App.MainVM.SelectedData != null)
+                App.MainVM.SelectedData.Time = time;
             OnPropertyChanged("Time");
         }
     }

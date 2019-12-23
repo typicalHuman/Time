@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Xml.Serialization;
 using Time.Model;
 
 namespace Time.Scripts.ViewModel
@@ -193,6 +194,7 @@ namespace Time.Scripts.ViewModel
         #endregion
 
         #region ModelInteraction
+        [XmlElement]
         public ObservableCollection<WorkData> WorkDatas { get; set; }
         private WorkData selectedData;
         public WorkData SelectedData

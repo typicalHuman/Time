@@ -2,24 +2,14 @@
 <ArrayOfWorkData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <WorkData>
     <Date>Date: 23.12.2019</Date>
-    <CurrentTime>0.41666666666666669</CurrentTime>
+    <CurrentTime>0.68333333333333335</CurrentTime>
     <RequiredTime>1</RequiredTime>
-    <Time>00:00:25</Time>
+    <Time>00:00:41</Time>
     <Timer>
       <IsStart>false</IsStart>
-      <Time>00:00:25</Time>
-      <Percent>42</Percent>
-    </Timer>
-  </WorkData>
-  <WorkData>
-    <Date>Date: 24.12.2019</Date>
-    <CurrentTime>0.15</CurrentTime>
-    <RequiredTime>1</RequiredTime>
-    <Time>00:00:09</Time>
-    <Timer>
-      <IsStart>false</IsStart>
-      <Time>00:00:09</Time>
-      <Percent>15</Percent>
+      <seconds>41</seconds>
+      <Time>00:00:41</Time>
+      <Percent>68</Percent>
     </Timer>
   </WorkData>
 </ArrayOfWorkData>

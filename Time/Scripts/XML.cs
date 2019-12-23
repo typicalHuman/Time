@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Xml.Serialization;
 using Time.Model;
@@ -17,12 +18,30 @@ namespace Time.Scripts
             }
         }
 
-        public ObservableCollection<WorkData> Deserialize()
+        public void Deserialize()
+        {
+            ObservableCollection<WorkData> tempList = _Deserialize();
+            if (tempList?.Count > 0)
+            {
+                App.MainVM.WorkDatas = tempList;
+                App.MainVM.SelectedData = App.MainVM.WorkDatas[0];
+                if (App.MainVM.SelectedData.Date == $"Date: {DateTime.Now.ToShortDateString()}")
+                    App.MainVM.IsEnabled = true;
+                App.MainVM.SelectedData.Timer.IsStart = false;
+
+            }
+        }
+
+        private ObservableCollection<WorkData> _Deserialize()
         {
             ObservableCollection<WorkData> coll = null;
             using (FileStream fs = new FileStream("TimeData.xml", FileMode.OpenOrCreate))
             {
-                coll = (ObservableCollection<WorkData>)serializer.Deserialize(fs);
+                try
+                {
+                    coll = (ObservableCollection<WorkData>)serializer.Deserialize(fs);
+                }
+                catch (Exception) {  }
             }
             return coll;
         }

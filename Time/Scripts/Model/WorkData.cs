@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Xml.Serialization;
 
 namespace Time.Model
 {
@@ -19,6 +20,7 @@ namespace Time.Model
                 Timer = new global::TimerViewModel();
             }
         }
+
         #region Date
         private string date;
         public string Date
