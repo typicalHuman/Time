@@ -23,6 +23,7 @@ namespace Time.Model
 
         #region Date
         private string date;
+        [XmlElement]
         public string Date
         {
             get { return date; }
@@ -36,6 +37,7 @@ namespace Time.Model
 
         #region CurrentTime
         private double currentTime;
+        [XmlElement]
         public double CurrentTime
         {
             get { return currentTime; }
@@ -49,6 +51,7 @@ namespace Time.Model
 
         #region RequiredTime
         private int requiredTime;
+        [XmlElement]
         public int RequiredTime
         {
             get { return requiredTime; }
@@ -62,6 +65,7 @@ namespace Time.Model
 
         #region Time
         private string time;
+        [XmlElement]
         public string Time
         {
             get { return time; }
@@ -74,6 +78,7 @@ namespace Time.Model
         #endregion
 
         private TimerViewModel timer;
+        [XmlElement]
         public TimerViewModel Timer
         {
             get { return timer; }

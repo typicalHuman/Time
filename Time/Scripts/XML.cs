@@ -35,14 +35,14 @@ namespace Time.Scripts
         private ObservableCollection<WorkData> _Deserialize()
         {
             ObservableCollection<WorkData> coll = null;
-            using (FileStream fs = new FileStream("TimeData.xml", FileMode.OpenOrCreate))
+            try
             {
-                try
+                using (FileStream fs = File.OpenRead("TimeData.xml"))
                 {
                     coll = (ObservableCollection<WorkData>)serializer.Deserialize(fs);
                 }
-                catch (Exception) {  }
             }
+            catch (FileNotFoundException) { }
             return coll;
         }
     }

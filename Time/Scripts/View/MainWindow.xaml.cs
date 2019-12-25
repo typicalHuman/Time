@@ -42,8 +42,14 @@ namespace Time
         {
             if (msg.Notification == "OpenSettingsWindow")
             {
-                var view2 = new OptionsWindow();
-                view2.ShowDialog();
+                OptionsWindow optionsWindow = new OptionsWindow();
+                optionsWindow.ShowDialog();
+            }
+            else if(msg.Notification == "OpenResultWindow")
+            {
+                ResultWindow resultWindow = new ResultWindow() { Topmost = true };
+                resultWindow.Owner = this;
+                resultWindow.ShowDialog();
             }
         }
     }

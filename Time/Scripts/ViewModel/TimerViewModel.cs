@@ -8,6 +8,7 @@ using System.Runtime.CompilerServices;
 using System.Windows.Threading;
 using Time;
 using Time.Scripts.ViewModel;
+using System.Xml.Serialization;
 
 public class TimerViewModel : INotifyPropertyChanged
 {
@@ -16,7 +17,7 @@ public class TimerViewModel : INotifyPropertyChanged
     {
         isStart = false;
         timer = new DispatcherTimer();
-        timer.Interval = TimeSpan.FromMilliseconds(100);
+        timer.Interval = TimeSpan.FromMilliseconds(1);
         timer.Tick += Tick;
     }
     #endregion
@@ -29,6 +30,7 @@ public class TimerViewModel : INotifyPropertyChanged
 
     #region IsStart
     private bool isStart;
+    [XmlElement]
     public bool IsStart
     {
         get { return isStart; }
@@ -44,6 +46,7 @@ public class TimerViewModel : INotifyPropertyChanged
     public int seconds { get; set; }
 
     private string time;
+    [XmlElement]
     public string Time
     {
         get { return time; }
@@ -59,6 +62,7 @@ public class TimerViewModel : INotifyPropertyChanged
 
     #region Percent
     private int percent;
+    [XmlElement]
     public int Percent
     {
         get 
@@ -144,6 +148,16 @@ public class TimerViewModel : INotifyPropertyChanged
         return 0;
     }
 
+
+    public string GetTime(int seconds)
+    {
+        int tempSeconds = seconds;
+        int _hours = GetHours(tempSeconds);
+        int _minutes = GetMinutes(tempSeconds - _hours * 3600);
+        int _seconds = tempSeconds - _hours * 3600 - _minutes * 60;
+        return $"{GetFullValue(_hours)}:{GetFullValue(_minutes)}:{GetFullValue(_seconds)}";
+    }
+
     private string GetTime()
     {
         int tempSeconds = seconds;
@@ -151,7 +165,6 @@ public class TimerViewModel : INotifyPropertyChanged
         int _minutes = GetMinutes(tempSeconds - _hours * 3600);
         int _seconds = tempSeconds - _hours * 3600 - _minutes * 60;
         return $"{GetFullValue(_hours)}:{GetFullValue(_minutes)}:{GetFullValue(_seconds)}";
-
     }
 
     private string GetFullValue(int val)

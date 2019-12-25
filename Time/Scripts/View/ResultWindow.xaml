@@ -1,4 +1,4 @@
-﻿<Window x:Class="Time.Scripts.View.OptionsWindow"
+﻿<Window x:Class="Time.Scripts.View.ResultWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -7,7 +7,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         mc:Ignorable="d"
-        MinHeight="350" MinWidth="250" Width="250" Height="350"
+        MinHeight="300" MinWidth="350" Width="350" Height="300"
         AllowsTransparency="True" WindowStartupLocation="CenterScreen"
         ResizeMode="CanResizeWithGrip" WindowStyle="None"
         BorderBrush="#007acb"
@@ -15,7 +15,8 @@
         MouseLeftButtonDown="Window_MouseLeftButtonDown"
         WindowState="Normal"
         FontFamily="{Binding FontFamily}"
-        DataContext="{x:Static local:App.SettingsVM}">
+        DataContext="{x:Static local:App.ResultVM}"
+        Foreground="White">
     <WindowChrome.WindowChrome>
         <WindowChrome 
         CaptionHeight="0"
@@ -50,49 +51,30 @@
         </Button>
 
         <!--#endregion-->
-        
+
         <!--#endregion-->
 
         <!--#region Title -->
         <StackPanel Orientation="Horizontal">
             <Button Width="50" Style="{StaticResource MaximizeButtonStyle}"
-                Content="{materialDesign:PackIcon Kind=Settings,Size=30}"
+                Content="{materialDesign:PackIcon Kind=Infinity,Size=30}"
                 HorizontalAlignment="Left"
                 Height="40" IsEnabled="False"/>
-            <TextBlock Text="Settings" FontSize="25" Margin="2 0 0 0"
-                      Foreground="White" VerticalAlignment="Center" FontWeight="Bold"/>
+            <TextBlock Text="Results" FontSize="25" Margin="2 0 0 0"
+                       VerticalAlignment="Center" FontWeight="Bold"/>
         </StackPanel>
         <!--#endregion-->
 
-        <!--#region DataSettings -->
-        <StackPanel Grid.Row="1" Grid.ColumnSpan="2">
-
-            <!--#region Limit -->
+        <!--#region Data -->
+        <StackPanel Grid.Row="1">
+            <!--#region Week -->
+            <StackPanel Orientation="Horizontal" Margin="2 2 0 0">
+                <TextBlock Text="For last week: " FontSize="20"/>
+                <TextBlock Text="{Binding ResultData.WeekTime}" FontSize="20"/>
+            </StackPanel>
+            <!--#endregion-->
             
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Time Limit" Foreground="White" FontSize="20" Margin="3 0 0 0"
-                           VerticalAlignment="Center"/>
-                <TextBox Width="55" FontSize="20" MaxLength="4" Margin="3 0 0 0"
-                         Foreground="White" Text="{Binding TimeLimit, UpdateSourceTrigger=PropertyChanged}"
-                         PreviewTextInput="TextBox_PreviewTextInput">
-                    <TextBox.ContextMenu >
-                        <ContextMenu Visibility="Collapsed"/>
-                    </TextBox.ContextMenu>
-                </TextBox>
-                <TextBlock Text="min" Foreground="White" FontSize="20" Margin="3 0 0 0"
-                           VerticalAlignment="Center"/>
-            </StackPanel>
-            <!--#endregion-->
 
-            <!--#region Theme -->
-            <TextBlock Text="Theme" Foreground="White" FontSize="20" Margin="3 0 0 0"/>
-            <StackPanel Orientation="Horizontal" Margin="3 3 0 0">
-                <Button IsEnabled="False" Style="{StaticResource MaximizeButtonStyle}"
-                        Width="35" Height="35" Content="{materialDesign:PackIcon Kind=ThemeLightDark,Size=25}">
-                </Button>
-                <ToggleButton Margin="2 0 0 0"/>
-            </StackPanel>
-            <!--#endregion-->
         </StackPanel>
         <!--#endregion-->
 

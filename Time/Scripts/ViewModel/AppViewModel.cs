@@ -26,6 +26,7 @@ namespace Time.Scripts.ViewModel
             fontFamily = new FontFamily("Courier New");
             WorkDatas = new ObservableCollection<WorkData>();
             OpenSettingsWindowCommand = new RelayCommand(obj => OpenSettingsWindowCommandExecute());
+            OpenResultWindowCommand = new RelayCommand(obj => OpenResultWindowCommandExecute());
             ResizeMode = ResizeMode.CanResizeWithGrip;
         }
         #endregion
@@ -125,6 +126,14 @@ namespace Time.Scripts.ViewModel
         }
         #endregion
 
+        #region OpenResultWindow
+        public RelayCommand OpenResultWindowCommand { private set; get; }
+        public void OpenResultWindowCommandExecute()
+        {
+            Messenger.Default.Send(new NotificationMessage("OpenResultWindow"));
+        }
+        #endregion
+
         #endregion
 
         #region Properties
@@ -217,7 +226,5 @@ namespace Time.Scripts.ViewModel
         #endregion
 
         #endregion
-
-
     }
 }

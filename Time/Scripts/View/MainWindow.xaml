@@ -96,11 +96,12 @@
                 <Button.ContextMenu>
                     <ContextMenu Style="{StaticResource ContextMenuStyle}">
                         <MenuItem Header="Settings" Command="{Binding OpenSettingsWindowCommand}"/>
+                        <MenuItem Header="Results" Command="{Binding OpenResultWindowCommand}"/>
                     </ContextMenu>
                 </Button.ContextMenu>
             </Button>
             <TextBlock Text="Time" Foreground="White" FontSize="25" 
-                       VerticalAlignment="Center" Margin="2 0 0 0"/>
+                       VerticalAlignment="Center" Margin="2 0 0 0" FontWeight="Bold"/>
             <!--#endregion-->
         </StackPanel>
         <!--#endregion-->
@@ -140,7 +141,7 @@
         <!--#region Data -->
         <ListBox ItemsSource="{Binding WorkDatas}" 
                  SelectedItem="{Binding SelectedData}" Grid.Row="2" Background="#1b1c1b"
-                 >
+                 Grid.ColumnSpan="4" >
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Vertical">
@@ -152,15 +153,15 @@
                                          Value="{Binding CurrentTime}"  />
                             <TextBlock Text="{Binding Timer.Percent, StringFormat={}{0:0}%, UpdateSourceTrigger=PropertyChanged}" 
                                      HorizontalAlignment="Center" VerticalAlignment="Center">
-                                
+
                             </TextBlock>
                         </Grid>
-                        <TextBlock 
-                                   Text="{Binding Timer.Time}" FontSize="20" Foreground="White"/>
+                        <TextBlock Text="{Binding Timer.Time}" FontSize="20" Foreground="White"/>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
+
         <!--#endregion-->
 
     </Grid>

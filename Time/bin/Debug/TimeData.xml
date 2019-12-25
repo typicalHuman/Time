@@ -1,15 +1,15 @@
 <?xml version="1.0"?>
 <ArrayOfWorkData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <WorkData>
-    <Date>Date: 23.12.2019</Date>
-    <CurrentTime>0.68333333333333335</CurrentTime>
-    <RequiredTime>1</RequiredTime>
-    <Time>00:00:41</Time>
+    <Date>Date: 25.12.2019</Date>
+    <CurrentTime>709.95</CurrentTime>
+    <RequiredTime>2</RequiredTime>
+    <Time>11:49:57</Time>
     <Timer>
-      <IsStart>false</IsStart>
-      <seconds>41</seconds>
-      <Time>00:00:41</Time>
-      <Percent>68</Percent>
+      <IsStart>true</IsStart>
+      <seconds>42597</seconds>
+      <Time>11:49:57</Time>
+      <Percent>35498</Percent>
     </Timer>
   </WorkData>
-</ArrayOfWorkData>
+</ArrayOfWorkData>yOfWorkData>
