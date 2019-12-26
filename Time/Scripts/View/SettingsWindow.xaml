@@ -7,7 +7,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         mc:Ignorable="d"
-        MinHeight="350" MinWidth="250" Width="250" Height="350"
+        MinHeight="100" MinWidth="250" Width="250" Height="100"
         AllowsTransparency="True" WindowStartupLocation="CenterScreen"
         ResizeMode="CanResizeWithGrip" WindowStyle="None"
         BorderBrush="#007acb"
@@ -81,16 +81,6 @@
                 </TextBox>
                 <TextBlock Text="min" Foreground="White" FontSize="20" Margin="3 0 0 0"
                            VerticalAlignment="Center"/>
-            </StackPanel>
-            <!--#endregion-->
-
-            <!--#region Theme -->
-            <TextBlock Text="Theme" Foreground="White" FontSize="20" Margin="3 0 0 0"/>
-            <StackPanel Orientation="Horizontal" Margin="3 3 0 0">
-                <Button IsEnabled="False" Style="{StaticResource MaximizeButtonStyle}"
-                        Width="35" Height="35" Content="{materialDesign:PackIcon Kind=ThemeLightDark,Size=25}">
-                </Button>
-                <ToggleButton Margin="2 0 0 0"/>
             </StackPanel>
             <!--#endregion-->
         </StackPanel>

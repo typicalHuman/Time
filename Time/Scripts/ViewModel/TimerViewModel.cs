@@ -17,7 +17,7 @@ public class TimerViewModel : INotifyPropertyChanged
     {
         isStart = false;
         timer = new DispatcherTimer();
-        timer.Interval = TimeSpan.FromMilliseconds(1);
+        timer.Interval = TimeSpan.FromMilliseconds(1000);
         timer.Tick += Tick;
     }
     #endregion

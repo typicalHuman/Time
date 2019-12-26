@@ -3,7 +3,7 @@
                     xmlns:wpf="http://materialdesigninxaml.net/winfx/xaml/themes">
     
     
-    <Style x:Key="CloseButtonStyle" TargetType="{x:Type ButtonBase}">
+    <Style x:Key="CloseButtonStyle" TargetType="{x:Type ButtonBase}" > 
         <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
         <Setter Property="Background" Value="{DynamicResource PrimaryHueMidBrush}"/>
         <Setter Property="BorderBrush" Value="{DynamicResource PrimaryHueMidBrush}"/>

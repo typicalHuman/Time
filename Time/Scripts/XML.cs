@@ -12,10 +12,18 @@ namespace Time.Scripts
 
         public void Serialize(ObservableCollection<WorkData> coll)
         {
+            ClearFileContent();
             using (FileStream fs = new FileStream("TimeData.xml", FileMode.OpenOrCreate))
             {
                 serializer.Serialize(fs, coll);
             }
+        }
+
+        private void ClearFileContent()
+        {
+            StreamWriter sr = new StreamWriter("TimeData.xml", false);
+            sr.WriteLine("");
+            sr.Close();
         }
 
         public void Deserialize()

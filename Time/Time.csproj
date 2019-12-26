@@ -34,6 +34,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>clock_time_5025.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="CommonServiceLocator, Version=2.0.2.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
       <HintPath>..\packages\CommonServiceLocator.2.0.2\lib\net47\CommonServiceLocator.dll</HintPath>
@@ -160,6 +163,14 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="kisspng-alarm-clocks-computer-icons-font-awesome-5b2665f1d2f470.5753432915292431218641.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="120-1206400_pictogram-voting-wait-violet-clock-pictogram-clipart.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="clock_time_5025.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

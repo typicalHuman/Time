@@ -18,7 +18,8 @@
         MouseLeftButtonDown="Window_MouseLeftButtonDown"
         WindowState="{Binding WindowState}"
         FontFamily="{Binding FontFamily}"
-        DataContext="{x:Static local:App.MainVM}">
+        DataContext="{x:Static local:App.MainVM}"
+        Foreground="{Binding ForeGround}">
     <WindowChrome.WindowChrome>
         <WindowChrome 
         CaptionHeight="0"
@@ -46,7 +47,8 @@
         <!--#region CloseButton-->
         <Button Grid.Column="3" Width="51" Height="40"  Padding="5"
                 BorderThickness="0" BorderBrush="Transparent"
-                ToolTip="Close" Content="{materialDesign:PackIcon Kind=Close,Size=25}" Style="{StaticResource CloseButtonStyle}">
+                ToolTip="Close" Content="{materialDesign:PackIcon Kind=Close,Size=25}" 
+                Style="{StaticResource CloseButtonStyle}">
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="Click">
                     <i:InvokeCommandAction 

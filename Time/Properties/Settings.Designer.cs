@@ -34,5 +34,17 @@ namespace Time.Properties {
                 this["TimeLimit"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool IsLight {
+            get {
+                return ((bool)(this["IsLight"]));
+            }
+            set {
+                this["IsLight"] = value;
+            }
+        }
     }
 }

@@ -137,6 +137,7 @@ namespace Time.Scripts.ViewModel
         #endregion
 
         #region Properties
+
         #region FontFamily
         private FontFamily fontFamily;
         public FontFamily FontFamily
@@ -172,6 +173,32 @@ namespace Time.Scripts.ViewModel
             {
                 resizeMode = value;
                 OnPropertyChanged("ResizeMode");
+            }
+        }
+        #endregion
+
+        #region BackGround
+        private SolidColorBrush backGround;
+        public SolidColorBrush BackGround
+        {
+            get { return backGround; }
+            set
+            {
+                backGround = value;
+                OnPropertyChanged("BackGround");
+            }
+        }
+        #endregion
+
+        #region ForeGround
+        private SolidColorBrush foreGround;
+        public SolidColorBrush ForeGround
+        {
+            get { return foreGround; }
+            set
+            {
+                foreGround = value;
+                OnPropertyChanged("ForeGround");
             }
         }
         #endregion

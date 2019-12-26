@@ -37,6 +37,6 @@ C:\Users\Admin\Desktop\мои файлы\Программирование\Про
 C:\Users\Admin\Desktop\мои файлы\Программирование\Программы\Проекты\Time\Time\obj\Debug\Time.csproj.CopyComplete
 C:\Users\Admin\Desktop\мои файлы\Программирование\Программы\Проекты\Time\Time\obj\Debug\Time.exe
 C:\Users\Admin\Desktop\мои файлы\Программирование\Программы\Проекты\Time\Time\obj\Debug\Time.pdb
-C:\Users\Admin\Desktop\мои файлы\Программирование\Программы\Проекты\Time\Time\obj\Debug\Time.csprojAssemblyReference.cache
 C:\Users\Admin\Desktop\мои файлы\Программирование\Программы\Проекты\Time\Time\obj\Debug\Scripts\View\ResultWindow.g.cs
 C:\Users\Admin\Desktop\мои файлы\Программирование\Программы\Проекты\Time\Time\obj\Debug\Scripts\View\ResultWindow.baml
+C:\Users\Admin\Desktop\мои файлы\Программирование\Программы\Проекты\Time\Time\obj\Debug\Time.csprojAssemblyReference.cache

@@ -24,27 +24,23 @@ namespace Time.Scripts.Model
         #endregion
 
         #region MonthTime
-        private string monthTime;
         public string MonthTime
         {
-            get { return monthTime; }
+            get { return new TimerViewModel().GetTime(GetMonthSecondsSum()); }
             set
             {
-                monthTime = value;
                 OnPropertyChanged("MothTime");
             }
         }
         #endregion
 
-        #region YearTime
-        private string yearTime;
-        public string YearTime
+        #region AllTime
+        public string AllTime
         {
-            get { return yearTime; }
+            get { return new TimerViewModel().GetTime(GetAllSumSeconds()); }
             set
             {
-                yearTime = value;
-                OnPropertyChanged("YearTime");
+                OnPropertyChanged("AllTime");
             }
         }
         #endregion
@@ -84,14 +80,64 @@ namespace Time.Scripts.Model
         }
         #endregion
 
+        #region MonthCalculate
+
+        private int GetMonthLastDay()
+        {
+            DateTime now = DateTime.Now;
+            int month = 1;
+            if (now.Month != 12)
+                month = now.Month + 1;
+            return new DateTime(now.Year, month, 1).AddDays(-1).Day;
+        }
+
+        private int GetMonthSecondsSum()
+        {
+            int sum = 0;
+            int currentMonth = DateTime.Now.Month;
+            int lastMonthDay =  GetMonthLastDay();
+            for (int i = 0; i < App.MainVM.WorkDatas.Count && i < lastMonthDay; i++)
+            {
+                string date = App.MainVM.WorkDatas[i].Date;
+                if (GetDay(date) <= lastMonthDay && GetMonth(date) == currentMonth)
+                    sum += App.MainVM.WorkDatas[i].Timer.seconds;
+            }
+            return sum;
+        }
+
+        #endregion
+
+        #region AllTime
+
+        private int GetAllSumSeconds()
+        {
+            int sum = 0;
+            for(int i = 0; i < App.MainVM.WorkDatas.Count; i++)
+            {
+                sum += App.MainVM.WorkDatas[i].Timer.seconds;
+            }
+            return sum;
+        }
+
+        #endregion
+
         #region DateParse
         private int GetDay(string date)
         {
             date = date.Replace("Date: ", "");
             date = date.Remove(2, date.Length - 2);
-            return Convert.ToInt32(date);
+            return int.Parse(date);
+        }
+
+        private int GetMonth(string date)
+        {
+            date = date.Replace("Date: ", "");
+            date = date.Remove(0, 3);
+            date = date.Remove(2, date.Length - 2);
+            return int.Parse(date);
         }
         #endregion
+
         #endregion
 
     }
