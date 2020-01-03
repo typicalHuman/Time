@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Time.Model;
 using Time.Scripts;
 using Time.Scripts.View;
 using Time.Scripts.ViewModel;
@@ -32,6 +33,7 @@ namespace Time
             App.MainVM.CloseAction = new Action(this.Close);
             Messenger.Default.Register<NotificationMessage>(this, NotificationMessageReceived);
         }
+
 
         private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {

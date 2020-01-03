@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
@@ -43,7 +44,8 @@ namespace Time.Scripts.ViewModel
                 return closeCommand ?? (closeCommand = new RelayCommand(obj =>
                 {
                     XML xml = new XML();
-                    xml.Serialize(WorkDatas);
+                    xml.Serialize(App.MainVM.WorkDatas);
+                    Thread.Sleep(50);
                     CloseAction();
                 }));
             }
@@ -113,7 +115,7 @@ namespace Time.Scripts.ViewModel
         private bool IsWorkToday()
         {
             if(WorkDatas.Count > 0)
-               return WorkDatas[WorkDatas.Count - 1].Date != new WorkData().Date;
+               return WorkDatas[0].Date != new WorkData().Date;
             return true;
         }
         #endregion
