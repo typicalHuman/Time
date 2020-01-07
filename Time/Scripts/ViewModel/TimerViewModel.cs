@@ -14,7 +14,7 @@ public class TimerViewModel : INotifyPropertyChanged
     {
         isStart = false;
         timer = new DispatcherTimer();
-        timer.Interval = TimeSpan.FromMilliseconds(1);
+        timer.Interval = TimeSpan.FromMilliseconds(1000);
         timer.Tick += Tick;
     }
     #endregion
@@ -106,7 +106,7 @@ public class TimerViewModel : INotifyPropertyChanged
     #endregion
 
     #region TimeCalculate
-    private void Tick(object sender, EventArgs e)
+    public void Tick(object sender, EventArgs e)
     {
         seconds++;
         if (seconds % 600 == 0)

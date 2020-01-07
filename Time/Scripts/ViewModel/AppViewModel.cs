@@ -136,6 +136,24 @@ namespace Time.Scripts.ViewModel
         }
         #endregion
 
+        #region Add1MinuteCommand
+        private RelayCommand addMinutesCommand;
+        public RelayCommand AddMinutesCommand
+        {
+            get
+            {
+                return addMinutesCommand ?? (addMinutesCommand = new RelayCommand(obj => 
+                {
+                    if (SelectedData.Timer.IsStart)
+                    {
+                        SelectedData.Timer.seconds += Convert.ToInt32(obj);
+                        SelectedData.Timer.Tick(null, null);
+                    }
+                }));
+            }
+        }
+        #endregion
+
         #endregion
 
         #region Properties

@@ -137,6 +137,43 @@
             </ToggleButton>
             <!--#endregion-->
 
+            <!--#region Add1Minutes -->
+            <Button Width="50" Height="40" Style="{StaticResource MaximizeButtonStyle}"
+                    Content="+1m" FontSize="20">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="Click">
+                        <i:InvokeCommandAction 
+                Command="{Binding AddMinutesCommand}" CommandParameter="59"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </Button>
+            <!--#endregion-->
+
+            <!--#region Add2Minutes -->
+            <Button Width="50" Height="40" Style="{StaticResource MaximizeButtonStyle}"
+                    Content="+2m" FontSize="20">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="Click">
+                        <i:InvokeCommandAction 
+                 Command="{Binding AddMinutesCommand}" CommandParameter="119"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </Button>
+            <!--#endregion-->
+
+            <!--#region Add19Minutes -->
+            <Button Width="53" Height="40" Style="{StaticResource MaximizeButtonStyle}"
+                    Content="+10m" FontSize="20">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="Click">
+                        <i:InvokeCommandAction 
+                 Command="{Binding AddMinutesCommand}" CommandParameter="599"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </Button>
+            <!--#endregion-->
+
+
         </StackPanel>
         <!--#endregion-->
 

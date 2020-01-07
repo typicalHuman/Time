@@ -2,25 +2,26 @@
 <ArrayOfWorkData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <WorkData>
     <Date>Date: 07.01.2020</Date>
-    <CurrentTime>19.983333333333334</CurrentTime>
+    <CurrentTime>49.68333333333333</CurrentTime>
     <RequiredTime>180</RequiredTime>
-    <Time>00:19:59</Time>
+    <Time>00:49:41</Time>
     <Timer>
       <IsStart>true</IsStart>
-      <seconds>1200</seconds>
-      <Time>00:19:59</Time>
-      <Percent>11</Percent>
+      <seconds>2981</seconds>
+      <Time>00:49:41</Time>
+      <Percent>28</Percent>
     </Timer>
   </WorkData>
   <WorkData>
     <Date>Date: 06.01.2020</Date>
-    <CurrentTime>60</CurrentTime>
+    <CurrentTime>61</CurrentTime>
     <RequiredTime>180</RequiredTime>
-    <Time>01:00:43</Time>
+    <Time>01:01:00</Time>
     <Timer>
       <IsStart>false</IsStart>
-      <seconds>3600</seconds>
-      <Percent>33</Percent>
+      <seconds>3660</seconds>
+      <Time>01:01:00</Time>
+      <Percent>34</Percent>
     </Timer>
   </WorkData>
   <WorkData>
