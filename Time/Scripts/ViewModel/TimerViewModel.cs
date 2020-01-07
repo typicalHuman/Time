@@ -1,14 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Threading;
 using Time;
 using Time.Scripts.ViewModel;
 using System.Xml.Serialization;
+using Time.Scripts;
 
 public class TimerViewModel : INotifyPropertyChanged
 {
@@ -17,7 +14,7 @@ public class TimerViewModel : INotifyPropertyChanged
     {
         isStart = false;
         timer = new DispatcherTimer();
-        timer.Interval = TimeSpan.FromMilliseconds(1000);
+        timer.Interval = TimeSpan.FromMilliseconds(1);
         timer.Tick += Tick;
     }
     #endregion
@@ -112,6 +109,8 @@ public class TimerViewModel : INotifyPropertyChanged
     private void Tick(object sender, EventArgs e)
     {
         seconds++;
+        if (seconds % 600 == 0)
+            new XML().Serialize(App.MainVM.WorkDatas);
         SetPercent();
         SetCurrentTime();
         SetTime();
@@ -175,6 +174,3 @@ public class TimerViewModel : INotifyPropertyChanged
     }
     #endregion
 }
-
-
-
