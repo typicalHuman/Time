@@ -106,6 +106,11 @@ namespace Time.Scripts.ViewModel
                         WorkData data = new WorkData();
                         WorkDatas.Insert(0, data);
                         SelectedData = data;
+                        if(Properties.Settings.Default.TimeLimit == "")
+                        {
+                            Properties.Settings.Default.TimeLimit = "60";
+                            Properties.Settings.Default.Save();
+                        }
                         SelectedData.RequiredTime = int.Parse(Properties.Settings.Default.TimeLimit);
                         IsEnabled = true;
                     }

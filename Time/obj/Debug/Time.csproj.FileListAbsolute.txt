@@ -40,3 +40,45 @@ C:\Users\Admin\Desktop\мои файлы\Программирование\Про
 C:\Users\Admin\Desktop\мои файлы\Программирование\Программы\Проекты\Time\Time\obj\Debug\Scripts\View\ResultWindow.g.cs
 C:\Users\Admin\Desktop\мои файлы\Программирование\Программы\Проекты\Time\Time\obj\Debug\Scripts\View\ResultWindow.baml
 C:\Users\Admin\Desktop\мои файлы\Программирование\Программы\Проекты\Time\Time\obj\Debug\Time.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\files\Programming\Programs\Projects\Time\Time\bin\Debug\Time.exe.config
+C:\Users\Admin\Desktop\files\Programming\Programs\Projects\Time\Time\bin\Debug\Time.exe
+C:\Users\Admin\Desktop\files\Programming\Programs\Projects\Time\Time\bin\Debug\Time.pdb
+C:\Users\Admin\Desktop\files\Programming\Programs\Projects\Time\Time\bin\Debug\CommonServiceLocator.dll
+C:\Users\Admin\Desktop\files\Programming\Programs\Projects\Time\Time\bin\Debug\GalaSoft.MvvmLight.dll
+C:\Users\Admin\Desktop\files\Programming\Programs\Projects\Time\Time\bin\Debug\GalaSoft.MvvmLight.Extras.dll
+C:\Users\Admin\Desktop\files\Programming\Programs\Projects\Time\Time\bin\Debug\GalaSoft.MvvmLight.Platform.dll
+C:\Users\Admin\Desktop\files\Programming\Programs\Projects\Time\Time\bin\Debug\MaterialDesignColors.dll
+C:\Users\Admin\Desktop\files\Programming\Programs\Projects\Time\Time\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\Admin\Desktop\files\Programming\Programs\Projects\Time\Time\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\Admin\Desktop\files\Programming\Programs\Projects\Time\Time\bin\Debug\GalaSoft.MvvmLight.pdb
+C:\Users\Admin\Desktop\files\Programming\Programs\Projects\Time\Time\bin\Debug\GalaSoft.MvvmLight.xml
+C:\Users\Admin\Desktop\files\Programming\Programs\Projects\Time\Time\bin\Debug\GalaSoft.MvvmLight.Extras.pdb
+C:\Users\Admin\Desktop\files\Programming\Programs\Projects\Time\Time\bin\Debug\GalaSoft.MvvmLight.Extras.xml
+C:\Users\Admin\Desktop\files\Programming\Programs\Projects\Time\Time\bin\Debug\GalaSoft.MvvmLight.Platform.pdb
+C:\Users\Admin\Desktop\files\Programming\Programs\Projects\Time\Time\bin\Debug\GalaSoft.MvvmLight.Platform.xml
+C:\Users\Admin\Desktop\files\Programming\Programs\Projects\Time\Time\bin\Debug\MaterialDesignColors.pdb
+C:\Users\Admin\Desktop\files\Programming\Programs\Projects\Time\Time\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\Admin\Desktop\files\Programming\Programs\Projects\Time\Time\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\Admin\Desktop\files\Programming\Programs\Projects\Time\Time\obj\Debug\Time.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\files\Programming\Programs\Projects\Time\Time\obj\Debug\Scripts\Styles\CloseButtonStyle.baml
+C:\Users\Admin\Desktop\files\Programming\Programs\Projects\Time\Time\obj\Debug\Scripts\Styles\ContextMenuStyle.baml
+C:\Users\Admin\Desktop\files\Programming\Programs\Projects\Time\Time\obj\Debug\Scripts\Styles\MaximizeButtonStyle.baml
+C:\Users\Admin\Desktop\files\Programming\Programs\Projects\Time\Time\obj\Debug\Scripts\Styles\MenuButtonStyle.baml
+C:\Users\Admin\Desktop\files\Programming\Programs\Projects\Time\Time\obj\Debug\Scripts\View\MainWindow.g.cs
+C:\Users\Admin\Desktop\files\Programming\Programs\Projects\Time\Time\obj\Debug\Scripts\View\ResultWindow.g.cs
+C:\Users\Admin\Desktop\files\Programming\Programs\Projects\Time\Time\obj\Debug\Scripts\View\SettingsWindow.g.cs
+C:\Users\Admin\Desktop\files\Programming\Programs\Projects\Time\Time\obj\Debug\App.g.cs
+C:\Users\Admin\Desktop\files\Programming\Programs\Projects\Time\Time\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Admin\Desktop\files\Programming\Programs\Projects\Time\Time\obj\Debug\Time_MarkupCompile.cache
+C:\Users\Admin\Desktop\files\Programming\Programs\Projects\Time\Time\obj\Debug\Time_MarkupCompile.lref
+C:\Users\Admin\Desktop\files\Programming\Programs\Projects\Time\Time\obj\Debug\App.baml
+C:\Users\Admin\Desktop\files\Programming\Programs\Projects\Time\Time\obj\Debug\Scripts\Styles\StartButtonStyle.baml
+C:\Users\Admin\Desktop\files\Programming\Programs\Projects\Time\Time\obj\Debug\Scripts\View\MainWindow.baml
+C:\Users\Admin\Desktop\files\Programming\Programs\Projects\Time\Time\obj\Debug\Scripts\View\ResultWindow.baml
+C:\Users\Admin\Desktop\files\Programming\Programs\Projects\Time\Time\obj\Debug\Scripts\View\SettingsWindow.baml
+C:\Users\Admin\Desktop\files\Programming\Programs\Projects\Time\Time\obj\Debug\Time.g.resources
+C:\Users\Admin\Desktop\files\Programming\Programs\Projects\Time\Time\obj\Debug\Time.Properties.Resources.resources
+C:\Users\Admin\Desktop\files\Programming\Programs\Projects\Time\Time\obj\Debug\Time.csproj.GenerateResource.cache
+C:\Users\Admin\Desktop\files\Programming\Programs\Projects\Time\Time\obj\Debug\Time.csproj.CopyComplete
+C:\Users\Admin\Desktop\files\Programming\Programs\Projects\Time\Time\obj\Debug\Time.exe
+C:\Users\Admin\Desktop\files\Programming\Programs\Projects\Time\Time\obj\Debug\Time.pdb

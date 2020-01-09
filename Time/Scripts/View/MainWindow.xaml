@@ -161,7 +161,7 @@
             </Button>
             <!--#endregion-->
 
-            <!--#region Add19Minutes -->
+            <!--#region Add10Minutes -->
             <Button Width="53" Height="40" Style="{StaticResource MaximizeButtonStyle}"
                     Content="+10m" FontSize="20">
                 <i:Interaction.Triggers>
